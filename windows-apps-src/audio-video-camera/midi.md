@@ -1,6 +1,6 @@
 ---
 ms.assetid: 9146212C-8480-4C16-B74C-D7F08C7086AF
-description: This article shows you how to enumerate MIDI (Musical Instrument Digital Interface) devices and send and receive MIDI messages from a Universal Windows app.
+description: This article teaches you how to enumerate MIDI (Musical Instrument Digital Interface) devices and send and receive MIDI messages from a Universal Windows app.
 title: MIDI
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 
 
-This article shows you how to enumerate MIDI (Musical Instrument Digital Interface) devices and send and receive MIDI messages from a Universal Windows app. Windows 10 supports MIDI over USB (class-compliant and most proprietary drivers), MIDI over Bluetooth LE (Windows 10 Anniversary Edition and later), and through freely-available third-party products, MIDI over Ethernet and routed MIDI.
+This article teaches you how to enumerate MIDI (Musical Instrument Digital Interface) devices and send and receive MIDI messages from a Universal Windows app. Windows 10 supports MIDI over USB (class-compliant and most proprietary drivers), MIDI over Bluetooth LE (Windows 10 Anniversary Edition and later), and through freely-available third-party products, MIDI over Ethernet and routed MIDI.
 
 ## Enumerate MIDI devices
 
@@ -130,10 +130,7 @@ When you enumerate output MIDI devices using the technique described above, your
 1.  In **Solution Explorer**, under your project, right-click **References** and select **Add reference...**
 2.  Expand the **Universal Windows** node.
 3.  Select **Extensions**.
-4.  From the list of extensions, select **Microsoft General MIDI DLS for Universal Windows Apps**.
-    > [!NOTE] 
-	> If there are multiple versions of the extension, be sure to select the version that matches the target for your app. You can see which SDK version your app is targeting on the **Application** tab of the project Properties.
-
- 
+4.  From the list of extensions, select **Microsoft General MIDI DLS for Universal Windows Apps**. You will see the SDK your version is targeting. Be sure to select the compatible version when there are multiple choices.
+https://docs.microsoft.com/en-us/windows/uwp/audio-video-camera/midi
 
  
