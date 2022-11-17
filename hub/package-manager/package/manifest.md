@@ -8,9 +8,28 @@ ms.localizationpriority: medium
 
 # Create your package manifest
 
-If you want to submit a software package to the [Windows Package Manager repository](repository.md), start by creating a package manifest. The manifest is a YAML file that describes the application to be installed.
+If you want to submit a software package to the [Windows Package Manager Community Repository](repository.md), start by creating a package manifest. The manifest is a YAML file that describes the application to be installed.
 
-This article describes the contents of a package manifest for Windows Package Manager.
+You may either use the [Windows Package Manager Manifest Creator](https://github.com/microsoft/winget-create), the [YAMLCreate](#using-the-yamlcreateps1) PowerShell script, or you can craft a manifest manually following the instructions below.
+
+> [!NOTE]
+> See the [Manifest FAQ](#manifest-faq) below for more general high-level information explaining manifests, packages, and versions.
+
+## Options for Manifest Creation
+
+### Using WinGetCreate Utility
+
+You can install the `wingetcreate` utility using the command below.
+
+```powershell
+winget install wingetcreate
+```
+
+After installation, you can run `wingetcreate new` to create a new package and fill in the prompts. The last option in the **WinGetCreate** prompts is to submit the manifest to the packages repository. If you choose yes, you will automatically submit your Pull Request (PR) to the [Windows Package Manager Community Repository](https://github.com/microsoft/winget-pkgs).
+
+### Using the YAMLCreate.ps1
+
+To help author manifest files, we have provided a YAMLCreate.ps1 powershell script located in the Tools folder on the [Windows Package Manager Community Repository](https://github.com/microsoft/winget-pkgs). You can use the script by cloning the repo on your PC and running the script directly from the **Tools** folder. The script will prompt you for the URL to the installer, then will prompt you to fill in metadata. Similar to using **WinGetCreate**, this script will offer the option to submit your manifest automatically.
 
 ## YAML basics
 
@@ -30,11 +49,11 @@ These conventions are used in this article:
 
 ## Manifest contents
 
-A package manifest must include a set of required items, and can also include further optional items that can help improve the customer experience of installing your software. This section provides brief summaries of the required manifest schema and complete manifest schemas, and examples of each.
+A package manifest consists of required items and optional items that can help improve the customer experience of installing your software. This section provides a brief summary of the required manifest schema and complete manifest schemas with examples of each.
 
 Each field in the manifest file must be Pascal-cased and cannot be duplicated.
 
-For a complete list and descriptions of items in a manifest, see the [manifest specification](https://github.com/microsoft/winget-cli/blob/master/doc/ManifestSpecv1.0.md) in the [https://github.com/microsoft/winget-cli](https://github.com/microsoft/winget-cli) repository.
+For a complete list and descriptions of items in a manifest, see the [manifest specification](https://github.com/microsoft/winget-pkgs/tree/master/doc/manifest/schema) in the [Windows Package Manager Community Repository](https://github.com/microsoft/winget-pkgs).
 
 ### Minimal required schema
 
@@ -45,7 +64,7 @@ The partitioning scheme was added to help with GitHub's UX. Folders with thousan
 
 #### [Minimal required schema](#tab/minschema/)
 
-```yaml
+```YAML
 PackageIdentifier:  # Publisher.package format.
 PackageVersion:     # Version numbering format.
 PackageLocale:      # BCP 47 format (e.g. en-US)
@@ -64,7 +83,7 @@ ManifestVersion: 1.0.0
 
 #### [Example](#tab/minexample/)
 
-Path: manifests / m / Microsoft / WindowsTerminal / 1.6.10571.0 / WindowsTerminal.yaml
+Path: manifests / m / Microsoft / WindowsTerminal / 1.6.10571.0 / Microsoft.WindowsTerminal.yaml
 
 ```YAML
 PackageIdentifier: Microsoft.WindowsTerminal
@@ -119,12 +138,12 @@ PackageIdentifier: "Microsoft.WindowsTerminal"
 PackageVersion: "1.6.10571.0"
 PackageLocale: "en-US"
 Publisher: "Microsoft"
-PublisherURL: "https://www.microsoft.com/"
-PrivacyURL: "https://privacy.microsoft.com/"
+PublisherUrl: "https://www.microsoft.com/"
+PrivacyUrl: "https://privacy.microsoft.com/"
 PackageName: "Windows Terminal"
-PackageURL: "https://docs.microsoft.com/windows/terminal/"
+PackageUrl: "https://learn.microsoft.com/windows/terminal/"
 License: "MIT"
-LicenseURL: "https://github.com/microsoft/terminal/blob/master/LICENSE"
+LicenseUrl: "https://github.com/microsoft/terminal/blob/master/LICENSE"
 ShortDescription: "The new Windows Terminal, a tabbed command line experience for Windows."
 Tags: 
 - "Console"
@@ -209,10 +228,26 @@ You can often figure out what silent `Switches` are available for an installer b
 * The package identifier must be unique. You cannot have multiple submissions with the same package identifier. Only one pull request per package version is allowed.
 * Avoid creating multiple publisher folders. For example, do not create "Contoso Ltd." if there is already a "Contoso" folder.
 * All tools must support a silent install. If you have an executable that does not support a silent install, then we cannot provide that tool at this time.
-* Provide as many fields as possible.  The more meta-data you provide the better the user experience will be. In some cases, the fields may not yet be supported by the Windows Package Manager client (winget.exe). For example, the `AppMoniker` field is optional. However, if you include this field, customers will see results associated with the `AppMoniker` value when performing the [search](../winget/search.md) command (for example, **vscode** for **Visual Studio Code**). If there is only one app with the specified `AppMoniker` value, customers can install your application by specifying the moniker rather than the fully qualified package identifier.
+* Provide as many fields as possible.  The more meta-data you provide the better the user experience will be. In some cases, the fields may not yet be supported by the Windows Package Manager client (winget.exe). For example, the `AppMoniker` field is optional. However, if you include this field, customers will see results associated with the `Moniker` value when performing the [search](../winget/search.md) command (for example, **vscode** for **Visual Studio Code**). If there is only one app with the specified `Moniker` value, customers can install your application by specifying the moniker rather than the fully qualified package identifier.
 * The length of strings in this specification should be limited to 100 characters before a line break.
 * The `PackageName` should match the entry made in **Add / Remove Programs** to help the correlation with manifests to support **export**, and **upgrade**.
 * The `Publisher` should match the entry made in **Add / Remove Programs** to help the correlation with manifests to support **export**, and **upgrade**.
 * Package installers in MSI format use [product codes](/windows/win32/msi/product-codes) to uniquely identify applications. The product code for a given version of a package should be included in the manifest to help ensure the best **upgrade** experience.
 * Limit the length of strings in your manifest to 100 characters before a line break.
 * When more than one installer type exists for the specified version of the package, an instance of `InstallerType` can be placed under each of the `Installers`.
+
+## Manifest FAQ
+
+### What is a manifest?
+
+Manifests are YAML files containing metadata used by the Windows Package Manager to install and upgrade software on the Windows operating system. There are thousands of these files partitioned under the [manifests directory in the winget-pkgs repository on GitHub](https://github.com/microsoft/winget-pkgs/tree/master/manifests). The Windows Package Manager directory structure had to be partitioned so you don't have to scroll as much in the site when looking for a manifest.
+
+### What is a package?
+
+Think of a package as an application or a software program. Windows Package Manager uses a "PackageIdentifier" to represent a unique package. These are generally in the form of `Publisher.Package`. Sometimes you might see additional values separated by a second period.
+
+### What is a version?
+
+Package versions are associated with a specific release. In some cases you will see a perfectly formed semantic version numbers and in other cases you might see something different. These may be date driven or they might have other characters with some package-specific meaning. The YAML key for a package version is "PackageVersion".
+
+For more information on understanding the directory structure and creating your first manifest, see [Authoring Manifests](https://github.com/microsoft/winget-pkgs/blob/master/AUTHORING_MANIFESTS.md) in the winget-pkgs repo on GitHub.

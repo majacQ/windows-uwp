@@ -27,6 +27,9 @@ The following arguments are available.
 | **-q,--query**  |  The query used to search for an app. |
 | **-?, --help** |  Get additional help on this command. |
 
+> [!NOTE]
+> The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to help find the package you are upgrading.
+
 ## Options
 
 The options allow you to customize the upgrade experience to meet your needs.
@@ -41,12 +44,18 @@ The options allow you to customize the upgrade experience to meet your needs.
 | **-s, --source**   |  Restricts the search to the source name provided. Must be followed by the source name. |  
 | **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |  
 | **-i, --interactive** |  Runs the installer in interactive mode. The default experience shows installer progress. |  
-| **-h, --silent** |  Runs the installer in silent mode. This suppresses all UI. The default experience shows installer progress. |  
+| **-h, --silent** |  Runs the installer in silent mode. This suppresses all UI. The default experience shows installer progress. |
+| **--purge** | Deletes all files and directories in the package directory (portable) |
 | **-o, --log**  |  Directs the logging to a log file. You must provide a path to a file that you have the write rights to. |
 | **--override** | A string that will be passed directly to the installer.    |
 | **-l, --location** |    Location to upgrade to (if supported). |
 | **--force** | When a hash mismatch is discovered will ignore the error and attempt to install the package.    |
+| **--accept-package-agreements** | Used to accept the license agreement, and avoid the prompt. |
+| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
 | **--all** | Updates all available packages to the latest application. |
+| **--include-unknown** | Upgrade packages even if their current version cannot be determined. |
+| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 ### Example queries
 
 The following example upgrades a specific version of an application.
@@ -67,17 +76,23 @@ The following example shows upgrading all apps
 winget upgrade --all
 ```
 
-## Using list and upgrade
+## Using **upgrade**
 
-It is common to use the [**list**](.\list.md) command to identify apps in need of an update, and then to use **upgrade** to install the latest.
+To identify which apps are in need of an update, simply use **upgrade** without any arguments to show all available upgrades. 
 
-In the example below you will see [**list**](.\list.md) identifies that an update is available for Microsoft.WindowsTerminalPreview, and then the user uses **upgrade** to update the application.
+In the example below, you will see **winget upgrade** shows the user which apps have an available update. From the available updates, the user identifies that an update is available for *JanDeDobbeleer.OhMyPosh* and uses **upgrade** to update the application.
 
-![Animation demonstrating list and upgrade commands](images\upgrade.gif)
+![Animation demonstrating upgrade command](./images/upgrade.gif)
+
+## Using **list** and **upgrade**
+To search for an available update for a specific app, use to the [**list**](.\list.md) command. Once you have identified that a update is available for your specific app, use **upgrade** to install the latest. 
+
+The example below shows the [**list**](.\list.md) command being used to identify that an update is available for *Microsoft.WindowsTerminalPreview*. The user then uses **upgrade** to update the application.
+![Animation demonstrating upgrade command](./images/listUpgrade.gif)
 
 ## **upgrade** --all
 
-**upgrade --all** will identify all the applications with upgrades available. When you run **winget upgrade --all** the Windows Package Manager will look for all applications that have updates available and attempt to install the.
+**upgrade --all** will identify all the applications with upgrades available. When you run **winget upgrade --all** the Windows Package Manager will look for all applications that have updates available and attempt to install the updates.
 
 > [!NOTE]
 > Some applications do not provide a version.  They are always latest.  Because the Windows Package Manager cannot identify if there is a newer version of the app, an upgrade will not be possible.

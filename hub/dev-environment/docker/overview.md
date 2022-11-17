@@ -14,7 +14,7 @@ ms.date: 09/24/2020
 
 Using containers for remote development and deploying applications with the Docker platform is a very popular solution with many benefits. Learn more about the variety of support offered by Microsoft tools and services, including Windows Subsystem for Linux (WSL), Visual Studio, Visual Studio Code, .NET, and a broad variety of Azure services.
 
-## Docker on Windows 10
+## Docker on Windows 
 
 :::row:::
     :::column:::
@@ -28,9 +28,9 @@ Using containers for remote development and deploying applications with the Dock
         Docker orientation and setup docs with step-by-step instructions on how to get started, including a video walk-through.
     :::column-end:::
     :::column:::
-       [![Microsoft Learn Docker course screenshot](../../images/docker-learn-course.png)](/learn/modules/intro-to-docker-containers/)<br>
-        **[MS Learn course: Introduction to Docker containers](/learn/modules/intro-to-docker-containers/)**<br>
-        Microsoft Learn offers a free intro course on Docker containers, in addition to a [variety of courses](/learn/browse/?terms=docker) on get started with Docker and connecting with Azure services.
+       [![Microsoft Learn Docker course screenshot](../../images/docker-learn-course.png)](/training/modules/intro-to-docker-containers/)<br>
+        **[MS Learn course: Introduction to Docker containers](/training/modules/intro-to-docker-containers/)**<br>
+        Microsoft Learn offers a free intro course on Docker containers, in addition to a [variety of courses](/training/browse/?terms=docker) on get started with Docker and connecting with Azure services.
     :::column-end:::
     :::column:::
        [![Docker Desktop WSL2 menu screenshot](../../images/docker-wsl2.png)](/windows/wsl/tutorials/wsl-containers)<br>
@@ -137,7 +137,7 @@ Using containers for remote development and deploying applications with the Dock
     :::column:::
        [![Azure App Service screenshot](../../images/azure-app-service.png)](/azure/app-service)<br>
         **[Azure App Service](/azure/app-service)**<br>
-        Learn how to build and host web apps, mobile back ends, and RESTful APIs in the programming language of your choice without managing infrastructure. Try the [Azure App Service course on MS Learn](/learn/modules/deploy-run-container-app-service) to deploy a web app based on a Docker image and configure continuous deployment.
+        Learn how to build and host web apps, mobile back ends, and RESTful APIs in the programming language of your choice without managing infrastructure. Try the [Azure App Service](/training/modules/deploy-run-container-app-service) Learn module to deploy a web app based on a Docker image and configure continuous deployment.
     :::column-end:::
 :::row-end:::
 
@@ -167,7 +167,7 @@ Learn about more [Azure services that support containers](https://azure.microsof
     :::column:::
        [![windows container icon](../../images/windows-container.png)](/virtualization/windowscontainers/quick-start/set-up-environment?tabs=Windows-10-Client)<br>
         **[Set up your environment](/virtualization/windowscontainers/quick-start/set-up-environment?tabs=Windows-10-Client)**<br>
-        Learn how to set up Windows 10 or Windows Server to create, run, and deploy containers, including prerequisites, installing Docker, and working with [Windows Container Base Images](/virtualization/windowscontainers/manage-containers/container-base-images).
+        Learn how to set up Windows 11, Windows 10, or Windows Server to create, run, and deploy containers, including prerequisites, installing Docker, and working with [Windows Container Base Images](/virtualization/windowscontainers/manage-containers/container-base-images).
     :::column-end:::
     :::column:::
        [![AKS icon](../../images/kubernettes.png)](/azure/aks/windows-container-cli)<br>

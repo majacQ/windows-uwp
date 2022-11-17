@@ -16,7 +16,7 @@ The **uninstall** command requires that you specify the exact string to uninstal
 
 `winget uninstall [[-q] \<query>] [\<options>]`
 
-![Image of uninstall command usage](images\uninstall.png)
+![Image of uninstall command usage](./images/uninstall.png)
 
 ## Arguments
 
@@ -26,6 +26,9 @@ The following arguments are available.
 |-------------|-------------|  
 | **-q,--query**  |  The query used to search for an app. |
 | **-?, --help** |  Get additional help on this command. |
+
+> [!NOTE]
+> The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to help find the package you are uninstalling.
 
 ## Options
 
@@ -37,16 +40,22 @@ The options allow you to customize the uninstall experience to meet your needs.
 | **--id**    |  Limits the uninstall to the ID of the application.   |  
 | **--name**   |  Limits the search to the name of the application. |  
 | **--moniker**   | Limits the search to the moniker listed for the application. |  
+| **--product-code** | Filters using the product code |
 | **-v, --version**  |  Enables you to specify an exact version to uninstall. If not specified, latest will uninstall the highest versioned application. |  
 | **-s, --source**   |  Restricts the search to the source name provided. Must be followed by the source name. |  
 | **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |  
 | **-i, --interactive** |  Runs the uninstaller in interactive mode. The default experience shows uninstaller progress. |  
 | **-h, --silent** |  Runs the uninstaller in silent mode. This suppresses all UI. The default experience shows uninstaller progress. |  
+| **--purge** | Deletes all files and directories in the package directory (portable) |
+| **--preserve** | Retains all files and directories created by the package (portable) |
 | **-o, --log**  |  Directs the logging to a log file. You must provide a path to a file that you have the write rights to. |
+| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 
 After you have successfully identified the application intended to uninstall, winget will execute the uninstall command. In the example below, the **name** 'orca' and the **id** was passed in.
 
-![Image of uninstall command example](images\uninstall-execute.png)
+![Image of uninstall command example](./images/uninstall-execute.png)
 
 ### Example queries
 
@@ -66,7 +75,7 @@ winget uninstall --id "{24559D0F-481C-F3BE-8DD0-D908923A38F8}"
 
 If the query provided to **winget** does not result in a single application to uninstall, then **winget** will display multiple results. You can then use additional filters to refine the search for a correct application.
 
-![Image of uninstall command multiple selections](images\uninstall-multiple.png)
+![Image of uninstall command multiple selections](./images/uninstall-multiple.png)
 
 ## Uninstalling apps not installed with Windows Package Manager
 
@@ -74,4 +83,4 @@ As mentioned in [**list**](.\list.md), the **winget list** command will display 
 
 In this example, **list** was used to find the application, and then the **id** was passed in as part of uninstall.
 
-![Image of uninstall command for apps not installed with Package Manager](images\uninstall-with-list.png)
+![Image of uninstall command for apps not installed with Package Manager](./images/uninstall-with-list.png)

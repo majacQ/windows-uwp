@@ -1,5 +1,5 @@
 ---
-title: Python on Windows 10 for beginners
+title: Python on Windows for beginners
 description: A guide to help you get started if your brand new to using Python on Windows.
 author: mattwojo 
 ms.author: mattwoj 
@@ -12,7 +12,7 @@ ms.date: 05/05/2021
 
 # Get started using Python on Windows for beginners
 
-The following is a step-by-step guide for beginners interested in learning Python using Windows 10.
+The following is a step-by-step guide for beginners interested in learning Python using Windows.
 
 ## Set up your development environment
 
@@ -185,7 +185,7 @@ We recommend the following resources to support you in continuing to learn about
 
 ### Online courses for learning Python
 
-- [Introduction to Python on Microsoft Learn](/learn/modules/intro-to-python/): Try the interactive Microsoft Learn platform and earn experience points for completing this module covering the basics on how to write basic Python code, declare variables, and work with console input and output. The interactive sandbox environment makes this a great place to start for folks who don't have their Python development environment set up yet.
+- [Introduction to Python](/training/modules/intro-to-python/): Try the interactive Microsoft Learn platform and earn experience points for completing this module covering the basics on how to write basic Python code, declare variables, and work with console input and output. The interactive sandbox environment makes this a great place to start for folks who don't have their Python development environment set up yet.
 
 - [Python on Pluralsight: 8 Courses, 29 Hours](https://app.pluralsight.com/paths/skills/python): The Python learning path on Pluralsight offers online courses covering a variety of topics related to Python, including a tool to measure your skill and find your gaps.
 

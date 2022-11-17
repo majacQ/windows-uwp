@@ -1,6 +1,6 @@
 ---
 title: React on Windows
-description: A guide to help you set up a React JavaScript development environment on Windows 10.
+description: A guide to help you set up a React JavaScript development environment on Windows.
 author: drewbatgit 
 ms.author: drewbat 
 manager: jken
@@ -20,7 +20,7 @@ React components are typically written in JavaScript and JSX (JavaScript XML) wh
 
 ## Does React work on Windows?
 
-Yes. Windows 10 supports two different environments for developing React apps:
+Yes. Windows supports two different environments for developing React apps:
 
 - [Install a React development environment on Windows](./react-on-windows.md)
 - [Install a React development environment on Windows Subsystem for Linux](./react-on-wsl.md)
@@ -29,7 +29,7 @@ For help determining which environment to use, check out [Should I install on Wi
 
 ## What can you do with React?
 
-Windows 10 supports a wide range of scenarios for React developers, including:
+Windows supports a wide range of scenarios for React developers, including:
 
 - **Basic web apps**: If you are new to React and primarily interested in learning about building a basic web app with React, we recommend that you [install create-react-app directly on Windows](./react-on-windows.md). If you're planning to create a web app that will be deployed for production, you may want to consider [installing create-react-app on Windows Subsystem for Linux (WSL)](./react-on-wsl.md), for better performance speed, system call compatibility, and alignment between your local development environment and deployment environment (which is often a Linux server).
 
@@ -93,7 +93,7 @@ React is a library, not a framework, so may require additional tools to create a
 
 Here are a few recommended places to learn React and build sample apps:
 
-- Microsoft Learn: The [React Learning Path](/learn/paths/react/) contains online course modules to help you get started with the basics.
+- The [React learning path](/training/paths/react/) contains online course modules to help you get started with the basics.
 - Build a single-page app (SPA) that runs in the browser (like this [sample web app that retrieves calendar info for a user with the Microsoft Graph API](/graph/tutorials/react))
 - Build a server-rendered app with [Next.js](./nextjs-on-wsl.md) or a static-site-generated app with [Gatsby](./gatsby-on-wsl.md)
 - Create a user interface (UI) for a [native app that runs on Windows, Android, and iOS devices](https://microsoft.github.io/react-native-windows/docs/view-managers) (checkout these [native Windows app samples](https://github.com/microsoft/react-native-windows-samples/tree/master/samples) or this [sample native app that retrieves calendar info for a user with the Microsoft Graph API](/graph/tutorials/react-native))

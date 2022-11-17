@@ -20,7 +20,7 @@ For more general information about React, deciding between React (web apps), Rea
 
 ## Prerequisites
 
-- Install the latest version of Windows 10 (Version 1903+, Build 18362+)
+- Install the latest version of Windows 10 (Version 1903+, Build 18362+) or Windows 11
 - [Install Windows Subsystem for Linux (WSL)](/windows/wsl/install-win10), including a Linux distribution (like Ubuntu) and make sure it is running in WSL 2 mode. You can check this by opening PowerShell and entering: `wsl -l -v`
 - [Install Node.js on WSL 2](./nodejs-on-wsl.md): These instructions use Node Version Manager (nvm) for installation, you will need a recent version of NodeJS to run create-react-app, as well as a recent version of Node Package Manager (npm). For exact version requirements, see the [Create React App website](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app).
 
@@ -65,4 +65,4 @@ To install the full React toolchain on WSL, we recommend using create-react-app:
 - [Install NodeJS on Windows](./nodejs-on-windows.md)
 - [Install NodeJS on WSL](./nodejs-on-wsl.md)
 - Try the tutorial: [Using React in Visual Studio Code](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial)
-- Try the Microsoft Learn online course: [React](/learn/paths/react/)
+- Try the [React learning path](/training/paths/react/)

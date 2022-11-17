@@ -12,9 +12,9 @@ ms.date: 03/30/2021
 
 # Install Vue.js directly on Windows
 
-A guide to help you set up a Vue.js development environment on Windows 10. Learn more on the [Vue.js overview](./vue-overview.md) page.
+A guide to help you set up a Vue.js development environment on Windows. Learn more on the [Vue.js overview](./vue-overview.md) page.
 
-Vue can be installed directly on Windows or on the Windows Subsystem for Linux (WSL). We generally recommend that you [install Vue on WSL](./vue-on-wsl.md) if you are planning to interact with a NodeJS backend, want parody with a Linux production server, or plan to follow along with a tutorial that utilizes Bash commands. For more info, see [Should I install on Windows or Windows Subsystem for Linux?](./windows-or-wsl.md).
+Vue can be installed directly on Windows or on the Windows Subsystem for Linux (WSL). We generally recommend that you [install Vue on WSL](./vue-on-wsl.md) if you are planning to interact with a NodeJS backend, want parity with a Linux production server, or plan to follow along with a tutorial that utilizes Bash commands. For more info, see [Should I install on Windows or Windows Subsystem for Linux?](./windows-or-wsl.md).
 
 ## Prerequisites
 
@@ -58,5 +58,5 @@ To learn more about additional plugins that can be added (such as linting or Apo
 - [Should I install on Windows or Windows Subsystem for Linux (WSL)?](./windows-or-wsl.md)
 - [Install Vue.js on WSL](./vue-on-wsl.md)
 - [Install Nuxt.js](./nuxtjs-on-wsl.md)
-- Microsoft Learn online course: [Take your first steps with Vue.js](/learn/paths/vue-first-steps/)
+- [Take your first steps with Vue.js](/training/paths/vue-first-steps/) learning path
 - Try a [Vue tutorial with VS Code](https://code.visualstudio.com/docs/nodejs/vuejs-tutorial)

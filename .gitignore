@@ -7,6 +7,7 @@ Tools/NuGet/
 _site/
 .optemp/
 .vscode
+.DS_Store
 
 .openpublishing.build.mdproj
 .openpublishing.buildcore.ps1
@@ -83,3 +84,7 @@ ipch/
 *.vsp
 *.vspx
 *.sap
+.markdownlint.json
+
+# Stop ReadMe file from syncing to maintain separate public and private Readme notes
+README.md

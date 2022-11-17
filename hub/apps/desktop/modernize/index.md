@@ -2,51 +2,67 @@
 description: Add modern XAML user interfaces, create MSIX packages, and incorporate other modern components into your desktop application.
 title: Modernize your desktop apps for Windows
 ms.topic: article
-ms.date: 10/02/2020
-ms.author: mcleans
-author: mcleanbyron
+ms.date: 09/21/2021
 ms.localizationpriority: medium
 ---
 
 # Modernize your desktop apps
 
-Windows 10 and the Universal Windows Platform (UWP) offer many features you can use to deliver a modern experience in your desktop apps. Most of these features are available as modular components that you can adopt in your desktop apps at your own pace without having to rewrite your application for a different platform. You can enhance your existing desktop apps by choosing which parts of Windows 10 and UWP to adopt.
+Windows 11 and Windows 10 offer many features you can use to deliver a modern experience in your desktop apps. Most of these features are available as modular components that you can adopt in your desktop apps at your own pace without having to rewrite your application for a different platform. You can enhance your existing desktop apps by choosing which Windows features to adopt.
 
-This article describes the Windows 10 and UWP features that you can use in your desktop apps today. For a tutorial that demonstrates how to modernize an existing app to use many of the features described in this article, see the [Modernize a WPF app](modernize-wpf-tutorial.md) tutorial.
+This topic describes the features that you can use in your desktop apps today. For a tutorial that demonstrates how to modernize an existing app to use many of the features described in this topic, see the [Modernize a WPF app](modernize-wpf-tutorial.md) tutorial.
 
 > [!NOTE]
-> Do you need assistance migrating desktop apps to Windows 10? The [App Assure](/fasttrack/products-and-capabilities#app-assure) service provides direct, no-cost support to developers who are porting their apps to Windows 10. This program is available to all ISVs and eligible enterprises. For more details on eligibility and about the program itself, visit [/fasttrack/win-10-app-assure-assistance-offered](/fasttrack/win-10-app-assure-assistance-offered). To get started now, [submit your request](https://fasttrack.microsoft.com/dl/daa).
+> Do you need assistance migrating desktop apps to Windows 10 or later? The [App Assure](/fasttrack/products-and-capabilities#app-assure) service provides direct, no-cost support to developers who are porting their apps to Windows 10 and later versions. This program is available to all ISVs and eligible enterprises. For more details on eligibility and about the program itself, visit [/fasttrack/win-10-app-assure-assistance-offered](/fasttrack/win-10-app-assure-assistance-offered). To get started now, [submit your request](https://fasttrack.microsoft.com/dl/daa).
+
+## Apply Windows 11 features
+
+Windows 11 marks a visual evolution of the Windows operating system, and introduces new features that improve app fundamentals and user experience. Many of these features are enabled by default for apps, but desktop apps may require updates to integrate with some new features. These features include rounded corners of top-level windows, snap layouts, and the updated context menu in File Explorer.
+
+For more information, see [Top 11 things you can do to make your app great on Windows 11](../../get-started/make-apps-great-for-windows.md).
+
+## Windows App SDK
+
+The Windows App SDK is a set of new developer components and tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 and many versions of Windows 10. You can use project templates to create new desktop apps that use the Windows App SDK with a WinUI 3-based UI, or you can use the Windows App SDK in existing desktop apps.
+
+For more information, see [Windows App SDK](../../windows-app-sdk/index.md).
 
 ## Windows UI Library
 
-The Windows UI Library is a set of NuGet packages that provide controls and other user interface elements for Windows 10 apps. WinUI started as a toolkit that provided new and updated versions of WinRT XAML controls for UWP apps that target down-level versions of Windows 10. WinUI has grown in scope, and is now the modern native user interface (UI) platform for Windows 10 apps across UWP, .NET, and native Win32.
+The Windows UI Library (WinUI) is a native user experience framework for both Windows desktop and UWP applications. WinUI started as a toolkit that provided new and updated versions of WinRT XAML controls for UWP apps that target down-level versions of Windows. The latest version, WinUI 3, has grown in scope and is now the modern native UI platform for Windows desktop apps.
 
 You can use WinUI in the following ways in desktop apps:
 
-* You can update existing WPF, Windows Forms, and C++ desktop (Win32) apps with [XAML Islands](xaml-islands.md) and host WinUI 2.x controls.
-* Use [WinUI 3](../../winui/winui3/index.md) to create [desktop apps](../../winui/winui3/get-started-winui3-for-desktop.md) with an entirely WinUI-based user interface.
+* Use [WinUI 3](../../winui/index.md) to create desktop apps (see [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md)) with an entirely WinUI 3-based user interface. WinUI 3 is one of many features provided by the [Windows App SDK](../../windows-app-sdk/index.md).
+* You can update existing WPF, Windows Forms, and C++ desktop (Win32) apps with [XAML Islands](xaml-islands.md) and host WinUI 2 controls.
 
-See [Windows UI (WinUI) Library](../../winui/index.md).
+For more information, see [Windows UI (WinUI) Library](../../winui/index.md).
 
-## MSIX packages
+## Windows Runtime APIs
+
+You can call many Windows Runtime APIs directly in your WPF, Windows Forms, or C++ desktop app to integrate modern experiences that light up for users. For example, you can call Windows Runtime APIs to add toast notifications to your desktop app.
+
+For more information, see [Use Windows Runtime APIs in desktop apps](desktop-to-uwp-enhance.md).
+
+## MSIX deployment
 
 MSIX is a modern Windows app package format that provides a universal packaging experience for all Windows apps, including UWP, WPF, Windows Forms and Win32 apps. MSIX brings together the best aspects of MSI, .appx, App-V and ClickOnce installation technologies to provide a modern and reliable packaging experience.
 
 Packaging your desktop Windows apps in MSIX packages gets you access to a robust installation and updating experience, a managed security model with a flexible capability system, support for the Microsoft Store, enterprise management, and many custom distribution models.
 
-For more information, see [Package desktop applications](/windows/msix/desktop/desktop-to-uwp-root) in the MSIX documentation.
+For more information, see [Building an MSIX package from your code](/windows/msix/desktop/source-code-overview).
 
-## .NET Core 3
+## Use MSIX framework packages dynamically at run time
 
-.NET Core 3 is the latest major release of .NET Core. The highlight of this release is support for Windows desktop apps, including Windows Forms and WPF apps. You can run new and existing Windows desktop apps on .NET Core 3 and enjoy all the benefits that .NET Core has to offer. WinRT XAML controls that are hosted in [XAML Islands](xaml-islands.md) can also be used in Windows Forms and WPF apps that target .NET Core 3.
+The *dynamic dependencies* feature in the Windows App SDK and in the Windows 11 OS enables your apps to reference MSIX framework packages at run time. This feature is intended to be used primarily by unpackaged desktop apps to call APIs that are provided by MSIX framework packages.
 
-For more information, see [What's new in .NET Core 3.0](/dotnet/core/whats-new/dotnet-core-3-0).
+For more information, see [Use MSIX framework packages dynamically from your desktop app](framework-packages/index.md).
 
-## Windows Runtime APIs
+## .NET
 
-You can call many Windows Runtime APIs directly in your WPF, Windows Forms, or C++ desktop app to integrate modern experiences that light up for Windows 10 users. For example, you can call Windows Runtime APIs to add toast notifications to your desktop app.
+.NET (previously known as .NET Core) supports Windows desktop apps, including WinUI 3 apps created with the Windows App SDK (see [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md)). .NET also supports [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) and [Windows Forms (WinForms)](/dotnet/desktop/winforms/) apps. You can run new and existing Windows desktop apps on .NET, and enjoy all the benefits that .NET has to offer.
 
-For more information, see [Use Windows Runtime APIs in desktop apps](desktop-to-uwp-enhance.md).
+For more information, see [What's new in .NET 6](/dotnet/core/whats-new/dotnet-6).
 
 ## Host WinRT XAML controls (XAML Islands)
 
@@ -56,18 +72,13 @@ For more information, see [WinRT XAML controls in desktop apps](xaml-islands.md)
 
 ## Use the Visual layer in desktop apps
 
-You can now use Windows Runtime APIs in non-UWP desktop apps to enhance the look, feel, and functionality of your WPF, Windows Forms, and C++ desktop apps, and take advantage of the latest Windows 10 UI features that are only available via UWP. This is useful when you need to create custom experiences that go beyond the built-in WinRT XAML controls you can host by using XAML Islands.
+You can now use Windows Runtime APIs in non-UWP desktop apps to enhance the look, feel, and functionality of your WPF, Windows Forms, and C++ desktop apps, and take advantage of the latest Windows UI features that are only available via UWP. This is useful when you need to create custom experiences that go beyond the built-in WinRT XAML controls you can host by using XAML Islands.
 
 For more information, see [Modernize your desktop app using the Visual layer](visual-layer-in-desktop-apps.md).
 
 ## Additional features available to apps with package identity
 
-Some modern Windows 10 experiences are available only in desktop apps that have [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity). These features include certain Windows Runtime APIs, package extensions, and UWP components. For more information, see [Features that require package identity](modernize-packaged-apps.md).
-
-There are several ways to grant identity to a desktop app:
-
-* Package it in an [MSIX package](/windows/msix/desktop/desktop-to-uwp-root). MSIX is a modern app package format that provides a universal packaging experience for all Windows apps, WPF, Windows Forms and Win32 apps. It provides a robust installation and updating experience, a managed security model with a flexible capability system, support for the Microsoft Store, enterprise management, and many custom distribution models. For more information, see [Package desktop applications](/windows/msix/desktop/desktop-to-uwp-root) in the MSIX documentation.
-* If you are unable to adopt MSIX packaging for deploying your desktop app, starting in Windows 10, version 2004, you can grant package identity by creating a *sparse MSIX package* that contains only a package manifest. For more information, see [Grant identity to non-packaged desktop apps](grant-identity-to-nonpackaged-apps.md).
+Some modern Windows experiences are available only to desktop apps that have [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) at runtime. These features include certain Windows Runtime APIs, package extensions, and UWP components. For more info, see [Features that require package identity](modernize-packaged-apps.md).
 
 <a id="desktop-uwp-controls"></a>
 
@@ -94,7 +105,7 @@ Microsoft Graph is a collection of APIs you can use to build apps for organizati
 * Azure Active Directory
 * Microsoft 365 Office apps: SharePoint, OneDrive, Outlook/Exchange, Microsoft Teams, OneNote, Planner, and Excel
 * Enterprise Mobility and Security services: Identity Manager, Intune, Advanced Threat Analytics, and Advanced Threat Protection.
-* Windows 10 services: activities and devices
+* Windows services: activities and devices
 
 For more information, see the [Microsoft Graph docs](/graph/overview).
 

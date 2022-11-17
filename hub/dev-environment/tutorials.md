@@ -33,7 +33,7 @@ We've listed a few tutorials, course, and code samples below to help you get sta
 
 ## Get started with WSL
 
-* [An introductory to Windows Subsystem for Linux](/learn/modules/get-started-with-windows-subsystem-for-linux/)
+* [An introductory to Windows Subsystem for Linux](/training/modules/get-started-with-windows-subsystem-for-linux/)
 
 ![Filler image](../images/wsl-learn-course.png)
 
@@ -41,7 +41,7 @@ We've listed a few tutorials, course, and code samples below to help you get sta
 
 * [Build your first ASP.Net Core web app with Blazor](/aspnet/core/tutorials/build-your-first-blazor-app)
 
-* [Call an ASP.NET Core Web API from a WPF application using Azure AD V2](/samples/azure-samples/active-directory-dotnet-native-aspnetcore-v2/calling-an-aspnet-core-web-api-from-a-wpf-application-using-azure-ad-v2/)
+<!--- * [Call an ASP.NET Core Web API from a WPF application using Azure AD V2](/samples/azure-samples/active-directory-dotnet-native-aspnetcore-v2/calling-an-aspnet-core-web-api-from-a-wpf-application-using-azure-ad-v2/) --->
 
 ## Build a console app
 
@@ -49,10 +49,10 @@ We've listed a few tutorials, course, and code samples below to help you get sta
 
 ## Create a microservice
 
-* [Create and deploy a cloud-native ASP.NET Core microservice](/learn/modules/microservices-aspnet-core/)
+* [Create and deploy a cloud-native ASP.NET Core microservice](/training/modules/microservices-aspnet-core/)
 
 ## Additional resources
 
-* [Explore free online courses on Microsoft Learn](/learn/browse/)
+* [Explore free online courses on Microsoft Learn](/training/browse/)
 
 * [Explore online courses from Pluralsight](https://www.pluralsight.com/browse/software-development)

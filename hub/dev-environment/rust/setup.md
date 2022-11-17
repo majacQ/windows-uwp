@@ -39,13 +39,13 @@ New Rust projects default to using Git. So also add the individual component **G
 Next, [install Rust from the Rust website](https://www.rust-lang.org/tools/install). The website detects that you're running Windows, and it offers you 64- and 32-bit installers of the `rustup` tool for Windows, as well as instructions on installing Rust to the [Windows Subsystem for Linux (WSL)](/windows/wsl/about).
 
 > [!TIP]
-> Rust works very well on Windows; so there's no need for you to go the WSL route (unless you plan to locally compile and test on Linux). Since you have Windows, we recommend that you just run the `rustup` installer for 64-bit Windows. You'll then be all set to write apps *for* Windows using Rust.
+> Rust works very well on Windows; so there's no need for you to go the WSL route (unless you plan to locally compile and test on Linux). Since you have Windows, we recommend that you just run the `rustup` installer for 64-bit Windows. Also install the Microsoft C and C++ (MSVC) toolchain by running `rustup default stable-msvc`. You'll then be all set to write apps *for* Windows using Rust.
 
 When the Rust installer is finished, you'll be ready to program with Rust. You won't have a convenient IDE yet (we'll cover that in the next section&mdash;[Install Visual Studio Code](#install-visual-studio-code)). And you're not yet set up to call Windows APIs. But you could launch a command prompt (`cmd.exe`), and perhaps issue the command `cargo --version`. If you see a version number printed, then that confirms that Rust installed correctly.
 
 If you're curious about the use of the `cargo` keyword above, *Cargo* is the name of the tool in the Rust development environment that manages and builds your projects (more properly, *packages*) and their dependencies.
 
-And if you really do want to dive in to some programming at this point (even without the convenience of an IDE), then you could read the [Hello, World!](https://doc.rust-lang.org/book/ch01-02-hello-world.html) chapter of the The Rust Programming Language book on the Rust website.
+And if you really do want to dive in to some programming at this point (even without the convenience of an IDE), then you could read the [Hello, World!](https://doc.rust-lang.org/book/ch01-02-hello-world.html) chapter of The Rust Programming Language book on the Rust website.
 
 ## Install Visual Studio Code
 
@@ -106,7 +106,7 @@ Let's take Rust for a spin with a simple "Hello, world!" app.
 5. Now let's try running the app under the debugger. Put a breakpoint on line 2, and click **Run** > **Start Debugging** (or press **F5**). There are also **Debug** and **Run** commands embedded inside the text editor.
 
    > [!NOTE]
-   > When you run an app under the debugger for the first time, you'll see a dialog box saying "Cannot start debugging because no launch configuration has been provided". Click **OK** to see a second dialog box saying "Cargo.toml has been detected in this workspace. Would you like to generate launch configurations for its targets?". Click **Yes**. Then close the launch.json file and begin debugging again.
+   > When you run an app under the **CodeLLDB** extension and debugger for the first time, you'll see a dialog box saying "Cannot start debugging because no launch configuration has been provided". Click **OK** to see a second dialog box saying "Cargo.toml has been detected in this workspace. Would you like to generate launch configurations for its targets?". Click **Yes**. Then close the launch.json file and begin debugging again.
 
 6. As you can see, the debugger breaks at line 2. Press **F5** to continue, and the app runs to completion. In the **Terminal** pane, you'll see the expected output "Hello, world!".
 
